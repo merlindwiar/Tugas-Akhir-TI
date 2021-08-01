@@ -16,12 +16,12 @@ class CreatePhsTable extends Migration
         Schema::create('phs', function (Blueprint $table) {
             $table->id('id_ph');
             $table->integer('kadar_ph');
-            $table->unsignedBigInteger('id_status_ph');
-            $table->unsignedBigInteger('id_alat');
+            $table->foreignId('id_status_ph');
+            $table->foreignId('id_alat');
             $table->timestamps();
 
-            $table->foreign('id_status_ph')->references('id_status_ph')->on('status_phs');
-            $table->foreign('id_alat')->references('id_alat')->on('alats');
+            // $table->foreign('id_status_ph')->references('id_status_ph')->on('status_phs');
+            // $table->foreign('id_alat')->references('id_alat')->on('alats');
 
         });
     }
