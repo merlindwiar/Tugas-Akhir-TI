@@ -14,14 +14,13 @@ class CreateKekeruhansTable extends Migration
     public function up()
     {
         Schema::create('kekeruhans', function (Blueprint $table) {
-            $table->id('id_kekeruhan');
+            $table->id();
+            $table->unsignedBigInteger('alat_id');
+            $table->unsignedBigInteger('status_kekeruhan_id');
             $table->integer('NTU');
-            $table->foreignId('id_status_kekeruhan');
-            $table->foreignId('id_alat');
             $table->timestamps();
-
-            // $table->foreign('id_status_kekeruhan')->references('id_status_kekeruhan')->on('status_kekeruhans');
-            // $table->foreign('id_alat')->references('id_alat')->on('alats');
+            // $table->foreign('alat_id')->references('id')->on('alats');
+            // $table->foreign('alat_id')->references('id')->on('alats');
         });
     }
 

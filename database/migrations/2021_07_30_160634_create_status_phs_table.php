@@ -14,7 +14,7 @@ class CreateStatusPhsTable extends Migration
     public function up()
     {
         Schema::create('status_phs', function (Blueprint $table) {
-            $table->id('id_status_ph');
+            $table->id();
             $table->string('jenis_ph');
             $table->integer('min_ph');
             $table->integer('max_ph');

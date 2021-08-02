@@ -14,7 +14,7 @@ class CreateAlatsTable extends Migration
     public function up()
     {
         Schema::create('alats', function (Blueprint $table) {
-            $table->id('id_alat');
+            $table->id();
             $table->string('nama_alat');
             $table->integer('latitude');
             $table->integer('longitude');

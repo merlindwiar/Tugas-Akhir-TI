@@ -14,10 +14,12 @@ class CreatePhsTable extends Migration
     public function up()
     {
         Schema::create('phs', function (Blueprint $table) {
-            $table->id('id_ph');
+            $table->id();
             $table->integer('kadar_ph');
-            $table->foreignId('id_status_ph');
-            $table->foreignId('id_alat');
+            $table->unsignedBigInteger('alat_id');
+            $table->unsignedBigInteger('status_kekeruhan_id');
+            // $table->foreignId('status_ph_id');
+            // $table->foreignId('alat_id');
             $table->timestamps();
 
             // $table->foreign('id_status_ph')->references('id_status_ph')->on('status_phs');
