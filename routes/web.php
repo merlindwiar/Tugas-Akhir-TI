@@ -3,8 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductDetailController;
 use App\Models\User;
+use App\Http\Controllers\AlatController;
 use App\Models\Status_kekeruhan;
 use App\Models\Kekeruhan;
+use App\Http\Controllers\LoginController; // step 1
+
 
 
 /*
@@ -17,9 +20,16 @@ use App\Models\Kekeruhan;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
-    return view('content.dashboard');
+    return view('welcome');
+});
+
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/beranda', function () {
+        return view('content.dashboard');
+    });
 });
 
 Route::get('/keasaman-air', function () {
@@ -51,9 +61,11 @@ Route::get('/daerah', function () {
     return view('admin.daerah');
 });
 
-Route::get('/tambah-titik', function () {
-    return view('admin.tambah');
-});
+// Route::get('/tambah-titik', function () {
+//     return view('admin.tambah');
+// });
+
+Route::resource('/daerah', AlatController::class);
 
 Route::get('/edit-titik', function () {
     return view('admin.edit');
@@ -69,4 +81,11 @@ Route::get('/users/{id_user}', function ($id_user) {
 //     return response()->json($status_kekeruhan, 200);
 // });
 
-Route::get('/tes_status_keruh', 'StatusKeruhController@index');
+// Route::get('/tes_status_keruh', 'StatusKeruhController@index');
+
+Route::get('/login', function () {
+    return view('Pengguna.Login');
+})->name('login');
+
+Route::post('/postlogin', 'LoginController@postlogin')->name('postlogin');
+Route::get('/logout', 'LoginController@logout')->name('logout');

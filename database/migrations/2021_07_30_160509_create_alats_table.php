@@ -16,8 +16,8 @@ class CreateAlatsTable extends Migration
         Schema::create('alats', function (Blueprint $table) {
             $table->id();
             $table->string('nama_alat');
-            $table->integer('latitude');
-            $table->integer('longitude');
+            $table->string('latitude');
+            $table->string('longitude');
             $table->timestamps();
         });
     }

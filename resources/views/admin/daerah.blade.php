@@ -41,18 +41,21 @@
                           </tr>
                           </thead>
                           <tbody>
-                          <tr>
-                            <td>1</td>
-                            <td>01</td>
-                            <td>-8.3517569</td>
-                            <td>114.1558651 </td>
-                            <td>
-                                <a href="/edit-titik" class="btn btn-primary">Edit</a>
-                            </td>
-                            <td>
-                                <button class="btn btn-danger" type="submit">Hapus</button>
-                            </td>
-                          </tr>
+                              @foreach ($data as $i=>$row)
+                              <tr>
+                                <td>{{++$i}}</td>
+                                <td>{{$row->nama_alat}}</td>
+                                <td>{{$row->latitude}}</td>
+                                <td>{{$row->longitude}}</td>
+                                <td>
+                                    <a href="/edit-titik" class="btn btn-primary">Edit</a>
+                                </td>
+                                <td>
+                                    <button class="btn btn-danger" type="submit">Hapus</button>
+                                </td>
+                              </tr>
+                              @endforeach
+
                 </tbody>
                   </table>
                 </div>

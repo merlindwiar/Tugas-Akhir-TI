@@ -11,6 +11,12 @@ class Alat extends Model
     use HasFactory;
     protected $guarded = [];
 
+    protected $fillable=[
+        'nama_alat',
+        'latitude',
+        'longitude',
+    ];
+
     public function kekeruhan(){
         return $this->hasMany(Kekeruhan::class);
     }
