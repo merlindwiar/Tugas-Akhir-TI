@@ -1,4 +1,4 @@
-@extends('layout_admin.master')
+@extends('layout.master')
 @section('title','Titik Pemantauan')
 @section('halaman','Titik Pemantauan')
 @section('content')

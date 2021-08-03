@@ -24,21 +24,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
-Route::middleware(['auth'])->group(function () {
-    Route::get('/beranda', function () {
-        return view('content.dashboard');
-    });
+Route::middleware(['auth','ceklevel:admin'])->group(function () {
+    Route::get('/daerah','BerandaController@halamandua')->name('halaman-dua');
 });
 
-Route::get('/keasaman-air', function () {
-    return view('content.keasaman');
+Route::middleware(['auth','ceklevel:admin,user'])->group(function () {
+    Route::get('/beranda', 'BerandaController@index');
+    Route::get('/keasaman-air','BerandaController@halamansatu')->name('halaman-satu');
+    Route::get('/kekeruhan-air','BerandaController@halamantiga')->name('halaman-tiga');
 });
 
-Route::get('/kekeruhan-air', function () {
-    return view('content.kekeruhan');
-});
+// Route::get('/keasaman-air', function () {
+//     return view('content.keasaman');
+// });
+
+// Route::get('/kekeruhan-air', function () {
+//     return view('content.kekeruhan');
+// });
 
 
 Route::get('/data-titik', function () {
@@ -57,15 +59,15 @@ Route::get('/admin',function(){
     return view('admin.dashboardadmin');
 });
 
-Route::get('/daerah', function () {
-    return view('admin.daerah');
-});
+// Route::get('/daerah', function () {
+//     return view('admin.daerah');
+// });
 
 // Route::get('/tambah-titik', function () {
 //     return view('admin.tambah');
 // });
 
-Route::resource('/daerah', AlatController::class);
+// Route::resource('/daerah', AlatController::class);
 
 Route::get('/edit-titik', function () {
     return view('admin.edit');

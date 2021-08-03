@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 class AlatController extends Controller
 {
     //
-    public function index()
-    {
-        $data=Alat::all();
-        return view('admin.daerah', ['data' => $data]);
-    }
+    // public function index()
+    // {
+    //     $data=Alat::all();
+    //     return view('admin.daerah', ['data' => $data]);
+    // }
 }
