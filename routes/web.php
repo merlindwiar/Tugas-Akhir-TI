@@ -28,6 +28,9 @@ Route::middleware(['auth','ceklevel:admin'])->group(function () {
     Route::get('/data-daerah','AlatController@index')->name('data-daerah');
     Route::get('/tambah-titik','AlatController@create')->name('tambah-titik');
     Route::post('/simpan-titik','AlatController@store')->name('simpan-titik');
+    Route::get('/edit-titik/{id}','AlatController@edit')->name('edit-titik');
+    Route::post('/update-titik/{id}','AlatController@update')->name('update-titik');
+    Route::get('/delete-titik/{id}','AlatController@destroy')->name('delete-titik');
 });
 
 Route::middleware(['auth','ceklevel:admin,user'])->group(function () {

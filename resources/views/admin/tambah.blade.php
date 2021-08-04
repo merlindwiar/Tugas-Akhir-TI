@@ -39,7 +39,7 @@
                             <div class="col-12 col-md-9"><input type="text" id="longitude" name="longitude" placeholder="Longitude" class="form-control"><small class="form-text text-muted"></small></div>
                         </div>
                                     <button type="submit" class="btn btn-primary btn-sm">
-                                        <i class="fa fa-dot-circle-o"></i> Simpan
+                                        <i class="fa fa-dot-circle-o"></i> Simpan Data
                                      </button>
                                      {{-- <button type="reset" class="btn btn-danger btn-sm">
                                         <i class="fa fa-ban"></i> Reset
@@ -55,6 +55,7 @@
 
 
 <!-- REQUIRED SCRIPTS -->
+
 
 <!-- jQuery -->
 <script src="{{asset('assets/plugins/jquery/jquery.min.js')}}"></script>

@@ -32,28 +32,28 @@
                   <table id="tabel1" class="table table-bordered table-hover">
                     <thead>
                         <tr>
+                            <th>#</th>
                             <th>Nama alat</th>
                             <th>Latitude</th>
                             <th>Longitude</th>
-                            <th>Edit</th>
-                            <th>Hapus</th>
+                            <th>Aksi</th>
                           </tr>
                           </thead>
                           <tbody>
                               @foreach ($dtAlat as $item )
-
-                              @endforeach
                               <tr>
+                                <td>{{$loop->iteration}}</td>
                                 <td>{{$item->nama_alat}}</td>
                                 <td>{{$item->latitude}}</td>
                                 <td>{{$item->longitude}}</td>
                                 <td>
-                                    <a href="/edit-titik" class="btn btn-primary">Edit</a>
-                                </td>
-                                <td>
-                                    <button class="btn btn-danger" type="submit">Hapus</button>
+                                    <a href="{{url('edit-titik',$item->id)}}"><i class="fas fa-edit"></i></a>
+                                    |
+                                    <a href="{{url('delete-titik',$item->id)}}"><i class="fas fa-trash-alt" style="color: red"></i></a>
                                 </td>
                               </tr>
+                              @endforeach
+
                 </tbody>
                   </table>
                 </div>
@@ -108,6 +108,7 @@
 <script src="{{asset('assets/plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
 <script src="{{asset('assets/plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
 <script src="{{asset('assets/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
+@include('sweetalert::alert')
 </body>
 </html>
 @endsection
