@@ -62,7 +62,7 @@
           @endif
           @if (auth()->user()->level=="admin")
           <li class="nav-item">
-            <a href="{{route('halaman-dua')}}" class="nav-link">
+            <a href="{{route('data-daerah')}}" class="nav-link">
                 <ion-icon name="list-sharp"></ion-icon>
               <p>
                 Data Lokasi

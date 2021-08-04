@@ -25,15 +25,14 @@
                 <!-- /.card-header -->
                 <div class="card-body">
                     <div class="col-sm-2">
-                        <a href="/tambah-titik">
+                        <a href="{{url('tambah-titik')}}">
                         <button type="button" class="btn btn-block btn-primary">Tambah Data</button>
                         </a>
                       </div><br>
                   <table id="tabel1" class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th>No</th>
-                            <th>Id alat</th>
+                            <th>Nama alat</th>
                             <th>Latitude</th>
                             <th>Longitude</th>
                             <th>Edit</th>
@@ -41,11 +40,13 @@
                           </tr>
                           </thead>
                           <tbody>
+                              @foreach ($dtAlat as $item )
+
+                              @endforeach
                               <tr>
-                                <td>1</td>
-                                <td>01</td>
-                                <td>-8.3517569</td>
-                                <td>114.1558651 </td>
+                                <td>{{$item->nama_alat}}</td>
+                                <td>{{$item->latitude}}</td>
+                                <td>{{$item->longitude}}</td>
                                 <td>
                                     <a href="/edit-titik" class="btn btn-primary">Edit</a>
                                 </td>

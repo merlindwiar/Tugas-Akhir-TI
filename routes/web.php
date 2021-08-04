@@ -25,7 +25,9 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth','ceklevel:admin'])->group(function () {
-    Route::get('/daerah','BerandaController@halamandua')->name('halaman-dua');
+    Route::get('/data-daerah','AlatController@index')->name('data-daerah');
+    Route::get('/tambah-titik','AlatController@create')->name('tambah-titik');
+    Route::post('/simpan-titik','AlatController@store')->name('simpan-titik');
 });
 
 Route::middleware(['auth','ceklevel:admin,user'])->group(function () {
@@ -59,6 +61,9 @@ Route::get('/admin',function(){
     return view('admin.dashboardadmin');
 });
 
+Route::get('/tambah-titik', function () {
+    return view('admin.tambah');
+});
 // Route::get('/daerah', function () {
 //     return view('admin.daerah');
 // });

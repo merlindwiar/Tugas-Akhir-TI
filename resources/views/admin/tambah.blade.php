@@ -24,26 +24,26 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
-                        @csrf
+                    <form action="{{url('simpan-titik')}}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                        {{ csrf_field() }}
                         <div class="row form-group">
-                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Id alat</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="text-input" name="txtnama_kategori" placeholder="Text" class="form-control"><small class="form-text text-muted"></small></div>
+                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nama alat</label></div>
+                            <div class="col-12 col-md-9"><input type="text" id="nama_alat" name="nama_alat" placeholder="Nama Alat" class="form-control"><small class="form-text text-muted"></small></div>
                         </div>
                         <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Latitude</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="text-input" name="txtnama_kategori" placeholder="Text" class="form-control"><small class="form-text text-muted"></small></div>
+                            <div class="col-12 col-md-9"><input type="text" id="latitude" name="latitude" placeholder="Latitude" class="form-control"><small class="form-text text-muted"></small></div>
                         </div>
                         <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Longitude</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="text-input" name="txtnama_kategori" placeholder="Text" class="form-control"><small class="form-text text-muted"></small></div>
+                            <div class="col-12 col-md-9"><input type="text" id="longitude" name="longitude" placeholder="Longitude" class="form-control"><small class="form-text text-muted"></small></div>
                         </div>
                                     <button type="submit" class="btn btn-primary btn-sm">
                                         <i class="fa fa-dot-circle-o"></i> Simpan
                                      </button>
-                                     <button type="reset" class="btn btn-danger btn-sm">
+                                     {{-- <button type="reset" class="btn btn-danger btn-sm">
                                         <i class="fa fa-ban"></i> Reset
-                                    </button>
+                                    </button> --}}
                     </form>
                 </div>
                 <!-- /.card-bod-->
