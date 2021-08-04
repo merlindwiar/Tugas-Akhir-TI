@@ -14,6 +14,11 @@ class Kekeruhan extends Model
 
     use HasFactory;
     protected $guarded = [];
+    protected $table = "kekeruhans";
+    protected $primarykey = "id";
+    protected $fillable = [
+        'id','alat_id','status_kekeruhan_id','NTU'
+    ];
 
     public function alat()
     {

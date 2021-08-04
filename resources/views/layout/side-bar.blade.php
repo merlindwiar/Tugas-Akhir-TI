@@ -52,7 +52,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{route('halaman-tiga')}}" class="nav-link">
+            <a href="{{url('kekeruhan-air')}}" class="nav-link">
                 <ion-icon name="list-sharp"></ion-icon>
               <p>
                 Pantau Kekeruhan Air

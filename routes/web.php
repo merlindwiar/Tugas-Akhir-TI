@@ -36,7 +36,7 @@ Route::middleware(['auth','ceklevel:admin'])->group(function () {
 Route::middleware(['auth','ceklevel:admin,user'])->group(function () {
     Route::get('/beranda', 'BerandaController@index');
     Route::get('/keasaman-air','BerandaController@halamansatu')->name('halaman-satu');
-    Route::get('/kekeruhan-air','BerandaController@halamantiga')->name('halaman-tiga');
+    Route::get('/kekeruhan-air','KekeruhanController@index')->name('kekeruhan-air');
 });
 
 // Route::get('/keasaman-air', function () {

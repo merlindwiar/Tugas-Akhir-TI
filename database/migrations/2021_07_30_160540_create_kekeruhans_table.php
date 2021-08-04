@@ -17,7 +17,7 @@ class CreateKekeruhansTable extends Migration
             $table->id();
             $table->unsignedBigInteger('alat_id');
             $table->unsignedBigInteger('status_kekeruhan_id');
-            $table->integer('NTU');
+            $table->float('NTU');
             $table->timestamps();
             // $table->foreign('alat_id')->references('id')->on('alats');
             // $table->foreign('alat_id')->references('id')->on('alats');

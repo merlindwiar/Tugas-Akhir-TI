@@ -11,6 +11,6 @@ class KekeruhanController extends Controller
         //
         // $pagename='Data Kuliah';
         $data=Kekeruhan::all();
-        return view('content.kekeruhan', compact ('data'));
+        return view('content.kekeruhan', ['data'=>$data]);
     }
 }

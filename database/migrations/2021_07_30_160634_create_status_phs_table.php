@@ -16,8 +16,8 @@ class CreateStatusPhsTable extends Migration
         Schema::create('status_phs', function (Blueprint $table) {
             $table->id();
             $table->string('jenis_ph');
-            $table->integer('min_ph');
-            $table->integer('max_ph');
+            $table->float('min_ph');
+            $table->float('max_ph');
             $table->timestamps();
         });
     }

@@ -16,8 +16,8 @@ class CreateStatusKekeruhansTable extends Migration
         Schema::create('status_kekeruhans', function (Blueprint $table) {
             $table->id();
             $table->string('jenis_kekeruhan')->unique();
-            $table->integer('min_kekeruhan');
-            $table->integer('max_kekeruhan');
+            $table->float('min_kekeruhan');
+            $table->float('max_kekeruhan');
             $table->timestamps();
         });
     }

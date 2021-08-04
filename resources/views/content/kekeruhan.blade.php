@@ -28,18 +28,23 @@
           <table id="tabel1" class="table table-bordered table-hover">
             <thead>
             <tr>
+              <th>#</th>
               <th>Waktu</th>
               <th>NTU</th>
               <th>Keterangan</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-              <td>01:00:00</td>
-              <td>4</td>
-              <td>Air Jernih</td>
-            </tr>
-            <tr>
+                @foreach ($data as $item )
+                <tr>
+                    <td>{{$loop->iteration}}</td>
+                    <td>{{$item->created_at->format('H:i:s')}}</td>
+                    <td>{{$item->NTU}}</td>
+                    <td>{{$item->status_kekeruhan->jenis_kekeruhan}}</td>
+                  </tr>
+                @endforeach
+
+            {{-- <tr>
                 <td>02:00:00</td>
                 <td>4</td>
                 <td>Air Jernih</td>
@@ -93,7 +98,7 @@
                 <td>12:00:00</td>
                 <td>9</td>
                 <td>Air Keruh</td>
-            </tr>
+            </tr> --}}
             </tbody>
           </table>
         </div>

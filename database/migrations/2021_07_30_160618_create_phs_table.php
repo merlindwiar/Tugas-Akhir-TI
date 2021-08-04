@@ -15,7 +15,7 @@ class CreatePhsTable extends Migration
     {
         Schema::create('phs', function (Blueprint $table) {
             $table->id();
-            $table->integer('kadar_ph');
+            $table->float('kadar_ph');
             $table->unsignedBigInteger('alat_id');
             $table->unsignedBigInteger('status_kekeruhan_id');
             // $table->foreignId('status_ph_id');
