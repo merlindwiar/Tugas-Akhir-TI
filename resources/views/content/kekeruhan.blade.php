@@ -43,62 +43,6 @@
                     <td>{{$item->status_kekeruhan->jenis_kekeruhan}}</td>
                   </tr>
                 @endforeach
-
-            {{-- <tr>
-                <td>02:00:00</td>
-                <td>4</td>
-                <td>Air Jernih</td>
-            </tr>
-            <tr>
-                <td>03:00:00</td>
-                <td>4</td>
-                <td>Air Jernih</td>
-            </tr>
-            <tr>
-                <td>04:00:00</td>
-                <td>4</td>
-                <td>Air Jernih</td>
-            </tr>
-            <tr>
-                <td>05:00:00</td>
-                <td>4</td>
-                <td>Air Jernih</td>
-            </tr>
-            <tr>
-                <td>06:00:00</td>
-                <td>4</td>
-                <td>Air Jernih</td>
-            </tr>
-            <tr>
-                <td>07:00:00</td>
-                <td>5</td>
-                <td>Air Jernih</td>
-            </tr>
-            <tr>
-                <td>08:00:00</td>
-                <td>6</td>
-                <td>Air Keruh</td>
-            </tr>
-            <tr>
-                <td>09:00:00</td>
-                <td>6</td>
-                <td>Air Keruh</td>
-            </tr>
-            <tr>
-                <td>10:00:00</td>
-                <td>7</td>
-                <td>Air Keruh</td>
-            </tr>
-            <tr>
-                <td>11:00:00</td>
-                <td>8</td>
-                <td>Air Keruh</td>
-            </tr>
-            <tr>
-                <td>12:00:00</td>
-                <td>9</td>
-                <td>Air Keruh</td>
-            </tr> --}}
             </tbody>
           </table>
         </div>

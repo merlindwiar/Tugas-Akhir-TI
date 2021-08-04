@@ -12,6 +12,12 @@ class Ph extends Model
 
     protected $guarded = [];
 
+    protected $table = "phs";
+    protected $primarykey = "id";
+    protected $fillable = [
+        'id','kadar_ph','alat_id','status_ph_id',
+    ];
+
     public function alat()
     {
         return $this->belongsTo(Alat::class);

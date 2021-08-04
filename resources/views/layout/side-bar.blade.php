@@ -44,7 +44,7 @@
           </li>  --}}
           @if (auth()->user()->level=="user")
           <li class="nav-item">
-            <a href="{{route('halaman-satu')}}" class="nav-link">
+            <a href="{{url('keasaman-air')}}" class="nav-link">
                 <ion-icon name="list-sharp"></ion-icon>
               <p>
                 Pantau Keasaman Air

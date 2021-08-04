@@ -17,7 +17,7 @@ class CreatePhsTable extends Migration
             $table->id();
             $table->float('kadar_ph');
             $table->unsignedBigInteger('alat_id');
-            $table->unsignedBigInteger('status_kekeruhan_id');
+            $table->unsignedBigInteger('status_ph_id');
             // $table->foreignId('status_ph_id');
             // $table->foreignId('alat_id');
             $table->timestamps();

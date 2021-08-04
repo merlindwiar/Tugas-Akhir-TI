@@ -28,72 +28,21 @@
           <table id="tabel1" class="table table-bordered table-hover">
             <thead>
             <tr>
+              <th>#</th>
               <th>Waktu</th>
               <th>pH</th>
               <th>Keterangan</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-              <td>01:00:00</td>
-              <td>7.00</td>
-              <td>pH Netral</td>
-            </tr>
-            <tr>
-                <td>02:00:00</td>
-                <td>5.43</td>
-                <td>pH Asam</td>
-            </tr>
-            <tr>
-                <td>03:00:00</td>
-                <td>5.23</td>
-                <td>pH Asam</td>
-            </tr>
-            <tr>
-                <td>04:00:00</td>
-                <td>6.34</td>
-                <td>pH Asam</td>
-            </tr>
-            <tr>
-                <td>05:00:00</td>
-                <td>6.56</td>
-                <td>pH Asam</td>
-            </tr>
-            <tr>
-                <td>06:00:00</td>
-                <td>7.00</td>
-                <td>pH Netral</td>
-            </tr>
-            <tr>
-                <td>07:00:00</td>
-                <td>8.23</td>
-                <td>pH Basa</td>
-            </tr>
-            <tr>
-                <td>08:00:00</td>
-                <td>8.23</td>
-                <td>pH Basa</td>
-            </tr>
-            <tr>
-                <td>09:00:00</td>
-                <td>9.12</td>
-                <td>pH Basa</td>
-            </tr>
-            <tr>
-                <td>10:00:00</td>
-                <td>7.00</td>
-                <td>pH Netral</td>
-            </tr>
-            <tr>
-                <td>11:00:00</td>
-                <td>8.12</td>
-                <td>pH Basa</td>
-            </tr>
-            <tr>
-                <td>12:00:00</td>
-                <td>6.56</td>
-                <td>pH Asam</td>
-            </tr>
+                @foreach ($data as $item )
+                <tr>
+                    <td>{{$loop->iteration}}</td>
+                    <td>{{$item->created_at->format('H:i:s')}}</td>
+                    <td>{{$item->kadar_ph}}</td>
+                    <td>{{$item->status_ph->jenis_ph}}</td>
+                  </tr>
+                @endforeach
             </tbody>
           </table>
         </div>
