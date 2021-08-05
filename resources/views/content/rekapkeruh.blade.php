@@ -53,72 +53,21 @@
           <table id="tabel1" class="table table-bordered table-hover">
             <thead>
             <tr>
-              <th>Hari</th>
-              <th>Rata-Rata NTU</th>
-              <th>Keterangan</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td>2021-04-29</td>
-              <td>4</td>
-              <td>Air Jernih</td>
-            </tr>
-            <tr>
-                <td>2021-04-30</td>
-                <td>4</td>
-                <td>Air Jernih</td>
-            </tr>
-            <tr>
-                <td>2021-05-01</td>
-                <td>4</td>
-                <td>Air Jernih</td>
-            </tr>
-            <tr>
-                <td>2021-05-02</td>
-                <td>4</td>
-                <td>Air Jernih</td>
-            </tr>
-            <tr>
-                <td>2021-05-03</td>
-                <td>4</td>
-                <td>Air Jernih</td>
-            </tr>
-            <tr>
-                <td>2021-05-04</td>
-                <td>4</td>
-                <td>Air Jernih</td>
-            </tr>
-            <tr>
-                <td>2021-05-05</td>
-                <td>5</td>
-                <td>Air Jernih</td>
-            </tr>
-            <tr>
-                <td>2021-05-06</td>
-                <td>6</td>
-                <td>Air Keruh</td>
-            </tr>
-            <tr>
-                <td>2021-05-07</td>
-                <td>6</td>
-                <td>Air Keruh</td>
-            </tr>
-            <tr>
-                <td>2021-05-08</td>
-                <td>7</td>
-                <td>Air Keruh</td>
-            </tr>
-            <tr>
-                <td>2021-05-09</td>
-                <td>8</td>
-                <td>Air Keruh</td>
-            </tr>
-            <tr>
-                <td>2021-05-10</td>
-                <td>9</td>
-                <td>Air Keruh</td>
-            </tr>
+                <th>#</th>
+                <th>Waktu</th>
+                <th>NTU</th>
+                <th>Keterangan</th>
+              </tr>
+              </thead>
+              <tbody>
+                  @foreach ($data as $d )
+                  <tr>
+                      <td>{{$loop->iteration}}</td>
+                      <td>{{$d->created_at}}</td>
+                      <td>{{$d->NTU}}</td>
+                      <td>{{$d->status_kekeruhan->jenis_kekeruhan}}</td>
+                    </tr>
+                  @endforeach
             </tbody>
           </table>
         </div>

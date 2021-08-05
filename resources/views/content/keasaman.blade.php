@@ -4,7 +4,7 @@
 @section('content')
 
 <div class="col-sm-3  ">
-    <a href="/rekap-asam">
+    <a href="{{url('rekap-asam')}}">
     <button type="button" class="btn btn-block btn-primary">Data Rekapitulasi Keasaman</button>
     </a>
   </div><br>

@@ -52,14 +52,26 @@
           <table id="tabel1" class="table table-bordered table-hover">
             <thead>
             <tr>
-              <th>Hari</th>
-              <th>Rata-Rata pH</th>
+              <th>#</th>
+              <th>Waktu</th>
+              <th>Kadar pH</th>
               <th>Keterangan</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-              <td>2021-04-29</td>
+                {{-- @if (isset($data)) --}}
+                    @foreach ($data as $d )
+                <tr>
+                    <td>{{$loop->iteration}}</td>
+                    <td>{{$d->created_at}}</td>
+                    <td>{{$d->kadar_ph}}</td>
+                    <td>{{$d->status_ph->jenis_ph}}</td>
+                  </tr>
+                @endforeach
+                {{-- @endif --}}
+
+            {{-- <tr>
+              <td>2021-04-29 </td>
               <td>7.45</td>
               <td>pH Netral</td>
             </tr>
@@ -117,7 +129,7 @@
                 <td>2021-05-10</td>
                 <td>6.30</td>
                 <td>pH Asam</td>
-            </tr>
+            </tr> --}}
             </tbody>
           </table>
           <button type="submit" class="btn btn-primary btn-sm" >

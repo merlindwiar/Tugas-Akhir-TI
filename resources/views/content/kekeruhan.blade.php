@@ -4,7 +4,7 @@
 @section('content')
 
 <div class="col-sm-3 ">
-    <a href="/rekap-keruh">
+    <a href="{{url('rekap-keruh')}}">
     <button type="button" class="btn btn-block btn-primary">Data Rekapitulasi Kekeruhan</button>
     </a>
   </div><br>
@@ -12,7 +12,6 @@
 <div class="card">
     <div class="panel">
         <div id="chartTinggi">
-
         </div>
     </div>
 </div>
@@ -67,7 +66,7 @@
 <script src="{{asset('template')}}/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="{{asset('template')}}/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="{{asset('template')}}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="{{asset('highcharts')}}/highcharts.js"></script>
 <script>
     Highcharts.chart('chartTinggi', {
         chart: {

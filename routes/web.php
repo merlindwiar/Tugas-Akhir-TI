@@ -36,7 +36,9 @@ Route::middleware(['auth','ceklevel:admin'])->group(function () {
 Route::middleware(['auth','ceklevel:admin,user'])->group(function () {
     Route::get('/beranda', 'BerandaController@index');
     Route::get('/keasaman-air','PhController@index')->name('keasaman-air');
+    Route::get('/rekap-asam','RekapAsamController@index')->name('rekap-asam');
     Route::get('/kekeruhan-air','KekeruhanController@index')->name('kekeruhan-air');
+    Route::get('/rekap-keruh','RekapKeruhController@index')->name('rekap-keruh');
 });
 
 // Route::get('/keasaman-air', function () {
@@ -52,13 +54,13 @@ Route::get('/data-titik', function () {
     return view('content.admin');
 });
 
-Route::get('/rekap-asam', function () {
-    return view('content.rekapasam');
-});
+// Route::get('/rekap-asam', function () {
+//     return view('content.rekapasam');
+// });
 
-Route::get('/rekap-keruh', function () {
-    return view('content.rekapkeruh');
-});
+// Route::get('/rekap-keruh', function () {
+//     return view('content.rekapkeruh');
+// });
 
 Route::get('/admin',function(){
     return view('admin.dashboardadmin');
