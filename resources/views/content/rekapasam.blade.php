@@ -10,6 +10,7 @@
           <h3 class="card-title">Data Rekapitulasi Keasaman Air</h3>
         </div>
         <!-- /.card-header -->
+        <form action="search_created_at" method="POST">
         <div class="card-body">
             <div class="pilihan">
                     <div class="row form-group">
@@ -24,31 +25,46 @@
                     </select>
                     </div>
             </div>
+            <div class="form-inline">
             <div class="row form-group">
-                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Dari</label></div>
-                <div class="col-12 col-md-9"><input type="text" id="text-input" name="txtnama_kategori" placeholder="Text" class="form-control"></div>
+                <label for="Tanggal Awal">Awal</label>
+                    <input type="text"
+                    class="datepicker-here form-control"
+                    name="tanggal_awal"
+                    data-language='en'
+                    data-multiple-dates="3"
+                    data-multiple-dates-separator=", "
+                    data-position='top left'/>
             </div>
             <div class="row form-group">
                 <div class="col col-md-2"></div>
                 <div class="col-12 col-md-10"></div>
             </div>
             <div class="row form-group">
-                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Hingga</label></div>
-                <div class="col-12 col-md-9"><input type="text" id="text-input" name="txtnama_kategori" placeholder="Text" class="form-control"></div>
+                <label for="Tanggal Akhir">Akhir</label>
+                    <input type="text"
+                    class="datepicker-here form-control"
+                    name="tanggal_akhir"
+                    data-language='en'
+                    data-multiple-dates="3"
+                    data-multiple-dates-separator=", "
+                    data-position='top left'/>
             </div>
 
             <div class="cari">
             <div class="row form-group">
                 <div class="col col-md-3"></div>
                     <div class="col col-md-9">
-            <button type="submit" class="btn btn-primary btn-sm">
+            <button id="btn-seleksi" class="btn btn-success">
                 <i class=""></i> Cari
              </button>
                 </div>
             </div>
             </div>
         </div>
+        </div>
     </div>
+</form>
           <table id="tabel1" class="table table-bordered table-hover">
             <thead>
             <tr>
@@ -69,67 +85,6 @@
                   </tr>
                 @endforeach
                 {{-- @endif --}}
-
-            {{-- <tr>
-              <td>2021-04-29 </td>
-              <td>7.45</td>
-              <td>pH Netral</td>
-            </tr>
-            <tr>
-                <td>2021-04-30</td>
-                <td>5.34</td>
-                <td>pH Asam</td>
-            </tr>
-            <tr>
-                <td>2021-05-01</td>
-                <td>5.35</td>
-                <td>pH Asam</td>
-            </tr>
-            <tr>
-                <td>2021-05-02</td>
-                <td>6.66</td>
-                <td>pH Asam</td>
-            </tr>
-            <tr>
-                <td>2021-05-03</td>
-                <td>6.66</td>
-                <td>pH Asam</td>
-            </tr>
-            <tr>
-                <td>2021-05-04</td>
-                <td>7.01</td>
-                <td>pH Netral</td>
-            </tr>
-            <tr>
-                <td>2021-05-05</td>
-                <td>8.02</td>
-                <td>pH Basa</td>
-            </tr>
-            <tr>
-                <td>2021-05-06</td>
-                <td>8.02</td>
-                <td>pH Basa</td>
-            </tr>
-            <tr>
-                <td>2021-05-07</td>
-                <td>9.03</td>
-                <td>pH Basa</td>
-            </tr>
-            <tr>
-                <td>2021-05-08</td>
-                <td>7.02</td>
-                <td>pH Netral</td>
-            </tr>
-            <tr>
-                <td>2021-05-09</td>
-                <td>8.01</td>
-                <td>pH Basa</td>
-            </tr>
-            <tr>
-                <td>2021-05-10</td>
-                <td>6.30</td>
-                <td>pH Asam</td>
-            </tr> --}}
             </tbody>
           </table>
           <button type="submit" class="btn btn-primary btn-sm" >
@@ -164,6 +119,8 @@
 <script src="{{asset('template')}}/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="{{asset('template')}}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="{{asset('air-datepicker')}}/dist/js/datepicker.js"></script>
+<script src="{{asset('air-datepicker')}}/dist/js/i18n/datepicker.en.js"></script>
 <script>
     Highcharts.chart('chartTinggi', {
         chart: {
@@ -227,5 +184,10 @@
         "autoWidth": false,
         "responsive": true,
       });
+  </script>
+  <script>
+      $('.datepicker-here').datepicker({
+        autoClose: true;
+    })
   </script>
 @endsection

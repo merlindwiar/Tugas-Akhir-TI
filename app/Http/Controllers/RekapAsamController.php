@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Ph;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RekapAsamController extends Controller
 {
@@ -15,5 +16,11 @@ class RekapAsamController extends Controller
         return view('content.rekapasam', compact('data'));
 
         // return view('content.rekapasam', ['data' => Ph::all()]);
+    }
+    public function search(){
+        // $data=Ph::all();
+        // $query=Ph::all()->select()->get();
+        // dd($data);
+        // return view('content.rekapasam',compact('data','query'));
     }
 }
