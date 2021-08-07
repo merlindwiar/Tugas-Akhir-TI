@@ -122,7 +122,7 @@
 <script src="{{asset('air-datepicker')}}/dist/js/datepicker.js"></script>
 <script src="{{asset('air-datepicker')}}/dist/js/i18n/datepicker.en.js"></script>
 <script>
-    Highcharts.chart('chartTinggi', {
+    var chart = Highcharts.chart('chartTinggi', {
         chart: {
             type: 'column'
         },

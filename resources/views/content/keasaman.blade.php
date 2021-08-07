@@ -69,6 +69,19 @@
 <script src="{{asset('template')}}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script>
+
+  let data = @json($data);
+  console.log(data);
+
+  let created_at = [];
+  let ph = [];
+  data.forEach(element => {
+    created_at.push(element['created_at'])
+    ph.push(element['kadar_ph'])
+  });
+
+  // console.log(hasil)
+    
     Highcharts.chart('chartTinggi', {
         chart: {
             type: 'column'
@@ -77,20 +90,7 @@
             text: 'Grafik Keasaman Air'
         },
         xAxis: {
-            categories: [
-                '01:00:00',
-                '02:00:00',
-                '03:00:00',
-                '04:00:00',
-                '05:00:00',
-                '06:00:00',
-                '07:00:00',
-                '08:00:00',
-                '09:00:00',
-                '10:00:00',
-                '11:00:00',
-                '12:00:00'
-            ],
+            categories: created_at,
             crosshair: true
         },
         yAxis: {
@@ -115,8 +115,7 @@
         },
         series: [{
             name: 'pH',
-            data: [7.00, 5.43, 5.23, 6.34, 6.56, 7.00, 8.23, 8.23, 9.12, 7.00, 8.12, 6.56]
-
+            data: ph,
         }
         ]
     });

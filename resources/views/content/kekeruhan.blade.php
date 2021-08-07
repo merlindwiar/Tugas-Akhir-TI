@@ -68,6 +68,17 @@
 <script src="{{asset('template')}}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <script src="{{asset('highcharts')}}/highcharts.js"></script>
 <script>
+
+  let data = @json($data);
+  console.log(data);
+
+  let created_at = [];
+  let kekeruhan = [];
+  data.forEach(element => {
+    created_at.push(element['created_at'])
+    kekeruhan.push(element['kekeruhan'])
+  });
+
     Highcharts.chart('chartTinggi', {
         chart: {
             type: 'column'
@@ -76,20 +87,7 @@
             text: 'Grafik Kekeruhan Air'
         },
         xAxis: {
-            categories: [
-                '01:00:00',
-                '02:00:00',
-                '03:00:00',
-                '04:00:00',
-                '05:00:00',
-                '06:00:00',
-                '07:00:00',
-                '08:00:00',
-                '09:00:00',
-                '10:00:00',
-                '11:00:00',
-                '12:00:00'
-            ],
+            categories: created_at,
             crosshair: true
         },
         yAxis: {
@@ -114,7 +112,7 @@
         },
         series: [{
         name: 'NTU',
-        data: [4, 4, 4, 4, 4, 4, 5, 6, 6, 7, 8, 9]
+        data: kekeruhan
 
     }
         ]

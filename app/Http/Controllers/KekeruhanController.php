@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Kekeruhan;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class KekeruhanController extends Controller
 {
@@ -10,8 +11,8 @@ class KekeruhanController extends Controller
     {
         //
         // $pagename='Data Kuliah';
-        $data=Kekeruhan::all();
-        return view('content.kekeruhan', ['data'=>$data]);
+        $data=Kekeruhan::whereDate('created_at', Carbon::today())->get();;
+        return view('content.kekeruhan', compact('data'));
 
         // $chart=Kekeruhan::select(\DB::raw("'COUNT(*) as count"))
         //         ->whereYear('created_at',date('Y'))
