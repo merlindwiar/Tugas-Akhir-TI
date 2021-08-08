@@ -5,6 +5,7 @@ use App\Models\Status_kekeruhan;
 use App\Models\Alat;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use DateTimeInterface;
 
 class Kekeruhan extends Model
 {
@@ -28,5 +29,9 @@ class Kekeruhan extends Model
     public function status_kekeruhan()
     {
         return $this->belongsTo(Status_kekeruhan::class);
+    }
+    protected function serializeDate(DateTimeInterface $date)
+    {
+        return $date->format('H:i:s');
     }
 }

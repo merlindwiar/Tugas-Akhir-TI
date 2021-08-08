@@ -5,6 +5,8 @@ use App\Models\Alat;
 use App\Models\Status_ph;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use DateTimeInterface;
+
 
 class Ph extends Model
 {
@@ -25,5 +27,9 @@ class Ph extends Model
     public function status_ph()
     {
         return $this->belongsTo(Status_ph::class);
+    }
+    protected function serializeDate(DateTimeInterface $date)
+    {
+        return $date->format('H:i:s');
     }
 }
