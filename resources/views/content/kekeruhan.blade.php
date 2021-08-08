@@ -76,46 +76,58 @@
   let kekeruhan = [];
   data.forEach(element => {
     created_at.push(element['created_at'])
-    kekeruhan.push(element['kekeruhan'])
+    kekeruhan.push(element['NTU'])
   });
 
-    Highcharts.chart('chartTinggi', {
-        chart: {
-            type: 'column'
-        },
+        Highcharts.chart('chartTinggi', {
+
         title: {
-            text: 'Grafik Kekeruhan Air'
+        text: 'Grafik Kekeruhan Air'
         },
+
+        yAxis: {
+        title: {
+            text: 'Kekeruhan Air'
+        }
+        },
+
         xAxis: {
             categories: created_at,
-            crosshair: true
         },
-        yAxis: {
-            min: 0,
-            title: {
-                text: 'Kekeruhan Air'
-            }
+
+        legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
         },
-        tooltip: {
-            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
-            footerFormat: '</table>',
-            shared: true,
-            useHTML: true
-        },
+
         plotOptions: {
-            column: {
-                pointPadding: 0.2,
-                borderWidth: 0
-            }
+        series: {
+            label: {
+            connectorAllowed: false
+            },
+        }
         },
+
         series: [{
         name: 'NTU',
-        data: kekeruhan
+        data: kekeruhan,
+        }],
 
-    }
-        ]
+        responsive: {
+        rules: [{
+            condition: {
+            maxWidth: 500
+            },
+            chartOptions: {
+            legend: {
+                layout: 'horizontal',
+                align: 'center',
+                verticalAlign: 'bottom'
+            }
+            }
+        }]
+        }
     });
 </script>
 <script>

@@ -14,6 +14,7 @@ class Kekeruhan extends Model
 
     use HasFactory;
     protected $guarded = [];
+    protected $dates = ['created_at'];
     protected $table = "kekeruhans";
     protected $primarykey = "id";
     protected $fillable = [
