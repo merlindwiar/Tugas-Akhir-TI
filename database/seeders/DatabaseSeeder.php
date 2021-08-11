@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Kekeruhan;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,12 +14,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        // Kekeruhan::factory(10)->create();
         $this->call([
-            UsersTableSeeder::class,
-            RoleTableSeeder::class,
+            // UsersTableSeeder::class,
+            // RoleTableSeeder::class,
             KekeruhanTableSeeder::class,
-            StatusKeruhTableSeeder::class,
+            // StatusKeruhTableSeeder::class,
         ]);
     }
 }

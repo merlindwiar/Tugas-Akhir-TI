@@ -37,8 +37,10 @@ Route::middleware(['auth','ceklevel:admin,user'])->group(function () {
     Route::get('/beranda', 'BerandaController@index');
     Route::get('/keasaman-air','PhController@index')->name('keasaman-air');
     Route::get('/rekap-asam','RekapAsamController@index')->name('rekap-asam');
+    Route::post('/filter-asam','RekapAsamController@index')->name('filter-asam');
     Route::get('/kekeruhan-air','KekeruhanController@index')->name('kekeruhan-air');
     Route::get('/rekap-keruh','RekapKeruhController@index')->name('rekap-keruh');
+    // Route::get('/rekap-keruh','RekapKeruhController@searc')->name('search');
 });
 
 // Route::get('/keasaman-air', function () {

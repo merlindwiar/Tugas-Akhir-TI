@@ -17,6 +17,7 @@
     },
     "dependencies": {
         "air-datepicker": "^2.2.3",
+        "moment": "^2.29.1",
         "sweetalert2": "^11.1.2"
     }
 }
