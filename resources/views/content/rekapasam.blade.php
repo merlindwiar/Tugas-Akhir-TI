@@ -1,7 +1,4 @@
-@extends('layout.master')
-@section('title','Rekapitulasi Keasaman Air')
-@section('halaman','Rekapitulasi Keasaman Air')
-@section('content')
+@extends('layout.master') @section('title','Rekapitulasi Keasaman Air') @section('halaman','Rekapitulasi Keasaman Air') @section('content')
 <div class="row">
 	<div class="col-12">
 		<div class="card">
@@ -26,28 +23,33 @@
 							</select>
 						</div>
 					</div>
-                    {{-- <form action="{{url('filter-asam')}}" method="post" enctype="multipart/form-data" class="form-horizontal"> --}}
-                    {{-- {{ csrf_field() }} --}}
-                    <div class="form-inline">
-						<div class="row form-group mx-2">
-							<label for="Tanggal Awal">Awal</label>
-							<input type="text" id="min" class="form-control mx-2" name="min" data-language='en' />
-						</div>
-						<div class="row form-group">
-							<label for="Tanggal Akhir">Akhir</label>
-							<input type="text" id="max" class="form-control  mx-2" name="max" data-language='en'/>
-						</div>
-						{{-- <div class="cari">
+					 {{--
+					<form action="{{url('filter-asam')}}" method="post" enctype="multipart/form-data" class="form-horizontal">
+						 --}} {{-- {{ csrf_field() }} --}}
+						<div class="form-inline">
+							<div class="row form-group mx-2">
+								<label for="Tanggal Awal">Awal</label>
+								<input type="text" id="min" class="form-control mx-2" name="min" data-language='en'/>
+							</div>
 							<div class="row form-group">
-								<div class="col col-md-3"></div>
-								<div class="col col-md-9">
-									<button id="btn-seleksi" class="btn btn-success">
-									<i class=""></i> Cari </button>
+								<label for="Tanggal Akhir">Akhir</label>
+								<input type="text" id="max" class="form-control mx-2" name="max" data-language='en'/>
+							</div>
+							 {{--
+							<div class="cari">
+								<div class="row form-group">
+									<div class="col col-md-3"></div>
+									<div class="col col-md-9">
+										<button id="btn-seleksi" class="btn btn-success">
+										<i class=""></i> Cari </button>
+									</div>
 								</div>
 							</div>
-						</div> --}}
-					</div>
-                    {{-- </form> --}}
+							 --}}
+						</div>
+						 {{--
+					</form>
+					 --}}
 				</div>
 			</div>
 		</form>
@@ -64,7 +66,7 @@
 		 {{-- @if (isset($data)) --}} @foreach ($data as $d )
 		<tr>
 			<td>{{$loop->iteration}}</td>
-			<td>{{$d->created_at->format('Y-m-d')}}</td>
+			<td>{{$d->created_at}}</td>
 			<td>{{$d->kadar_ph}}</td>
 			<td>{{$d->status_ph->jenis_ph}}</td>
 		</tr>
@@ -84,14 +86,16 @@
 </div>
 </div>
 <!-- jQuery -->
-{{-- <script src="{{asset('template')}}/plugins/jquery/jquery.min.js"></script> --}}
+ {{--
+<script src="{{asset('template')}}/plugins/jquery/jquery.min.js"></script>
+ --}}
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-
 <!-- Bootstrap 4 -->
 <script src="{{asset('template')}}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- DataTables  & Plugins -->
-{{-- <script src="{{asset('template')}}/plugins/datatables/jquery.dataTables.min.js"></script> --}}
-
+ {{--
+<script src="{{asset('template')}}/plugins/datatables/jquery.dataTables.min.js"></script>
+ --}}
 <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 <script src="https://cdn.datatables.net/datetime/1.1.0/js/dataTables.dateTime.min.js"></script>
@@ -106,8 +110,8 @@
 <script src="{{asset('template')}}/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="{{asset('template')}}/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="{{asset('template')}}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-
-{{-- <script>
+ {{--
+<script>
       $('#tabel1').DataTable({
         "paging": true,
         "lengthChange": false,
@@ -126,14 +130,12 @@
         dateFormat: 'dd-mm-yy',
         onClose: function(selectedDate) {
           table.fnDraw();}})
-  </script> --}}
+  </script>
+ --}}
 <script>
-
   var minDate, maxDate;
-
     // DataTables initialisation
     var table = $('#tabel1').DataTable();
-
     // Create date inputs
     minDate = new DateTime($('#min'), {
         format: 'YYYY-MM-DD'
@@ -141,14 +143,12 @@
     maxDate = new DateTime($('#max'), {
         format: 'YYYY-MM-DD'
     });
-
 // Custom filtering function which will search data in column four between two values
 $.fn.dataTable.ext.search.push(
     function( settings, data, dataIndex ) {
         var min = minDate.val();
         var max = maxDate.val();
         var date = new Date(data[1]);
-
         if (
             ( min === null && max === null ) ||
             ( min == null && date <= max ) ||
@@ -160,13 +160,9 @@ $.fn.dataTable.ext.search.push(
         return false;
     }
 );
-
 // Refilter the table
 $('#min, #max').on('change', function () {
         table.draw();
     });
-
 </script>
-
-
 @endsection
