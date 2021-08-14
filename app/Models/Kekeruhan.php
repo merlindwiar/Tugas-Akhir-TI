@@ -19,7 +19,7 @@ class Kekeruhan extends Model
     protected $table = "kekeruhans";
     protected $primarykey = "id";
     protected $fillable = [
-        'id','alat_id','status_kekeruhan_id','NTU'
+        'id','alat_id','status_kekeruhan','NTU'
     ];
 
     public function alat()

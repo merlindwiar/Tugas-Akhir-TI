@@ -17,7 +17,7 @@ class Ph extends Model
     protected $table = "phs";
     protected $primarykey = "id";
     protected $fillable = [
-        'id','kadar_ph','alat_id','status_ph_id',
+        'id','kadar_ph','alat_id','status_ph_id','status_ph',
     ];
 
     public function alat()

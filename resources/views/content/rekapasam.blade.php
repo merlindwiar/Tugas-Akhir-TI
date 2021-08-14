@@ -68,7 +68,7 @@
 			<td>{{$loop->iteration}}</td>
 			<td>{{$d->created_at}}</td>
 			<td>{{$d->kadar_ph}}</td>
-			<td>{{$d->status_ph->jenis_ph}}</td>
+			<td>{{$d->status_ph}}</td>
 		</tr>
 		 @endforeach {{-- @endif --}}
 		</tbody>
@@ -143,6 +143,8 @@
     maxDate = new DateTime($('#max'), {
         format: 'YYYY-MM-DD'
     });
+
+
 // Custom filtering function which will search data in column four between two values
 $.fn.dataTable.ext.search.push(
     function( settings, data, dataIndex ) {
@@ -164,5 +166,22 @@ $.fn.dataTable.ext.search.push(
 $('#min, #max').on('change', function () {
         table.draw();
     });
+
 </script>
+
+{{-- <script>
+$(document).ready(function() {
+    $('#tabel1').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
+    } );
+} );
+
+</script> --}}
+
 @endsection

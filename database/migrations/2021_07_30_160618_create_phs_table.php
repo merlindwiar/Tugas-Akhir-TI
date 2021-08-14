@@ -16,8 +16,9 @@ class CreatePhsTable extends Migration
         Schema::create('phs', function (Blueprint $table) {
             $table->id();
             $table->float('kadar_ph');
-            $table->unsignedBigInteger('alat_id');
-            $table->unsignedBigInteger('status_ph_id');
+            // $table->unsignedBigInteger('alat_id');
+            // $table->unsignedBigInteger('status_ph_id');
+            $table->String('status_ph');
             // $table->foreignId('status_ph_id');
             // $table->foreignId('alat_id');
             $table->timestamps();

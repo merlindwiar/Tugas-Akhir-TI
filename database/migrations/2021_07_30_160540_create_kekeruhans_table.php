@@ -15,9 +15,10 @@ class CreateKekeruhansTable extends Migration
     {
         Schema::create('kekeruhans', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('alat_id');
-            $table->unsignedBigInteger('status_kekeruhan_id');
+            // $table->unsignedBigInteger('alat_id');
+            // $table->unsignedBigInteger('status_kekeruhan_id');
             $table->float('NTU');
+            $table->String('status_kekeruhan');
             $table->timestamps();
             // $table->foreign('alat_id')->references('id')->on('alats');
             // $table->foreign('alat_id')->references('id')->on('alats');
