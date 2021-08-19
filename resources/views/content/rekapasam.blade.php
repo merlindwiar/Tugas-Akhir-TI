@@ -23,66 +23,44 @@
 							</select>
 						</div>
 					</div>
-					 {{--
-					<form action="{{url('filter-asam')}}" method="post" enctype="multipart/form-data" class="form-horizontal">
-						 --}} {{-- {{ csrf_field() }} --}}
-						<div class="form-inline">
-							<div class="row form-group mx-2">
-								<label for="Tanggal Awal">Awal</label>
-								<input type="text" id="min" class="form-control mx-2" name="min" data-language='en'/>
-							</div>
-							<div class="row form-group">
-								<label for="Tanggal Akhir">Akhir</label>
-								<input type="text" id="max" class="form-control mx-2" name="max" data-language='en'/>
-							</div>
-							 {{--
-							<div class="cari">
-								<div class="row form-group">
-									<div class="col col-md-3"></div>
-									<div class="col col-md-9">
-										<button id="btn-seleksi" class="btn btn-success">
-										<i class=""></i> Cari </button>
-									</div>
-								</div>
-							</div>
-							 --}}
-						</div>
-						 {{--
-					</form>
-					 --}}
+                    <div class="form-inline">
+                        <div class="row form-group mx-2">
+                            <label for="Tanggal Awal">Awal</label>
+                            <input type="text" id="min" class="form-control mx-2" name="min" data-language='en'/>
+                        </div>
+                        <div class="row form-group">
+                            <label for="Tanggal Akhir">Akhir</label>
+                            <input type="text" id="max" class="form-control mx-2" name="max" data-language='en'/>
+                        </div>
+                    </div>
 				</div>
-			</div>
-		</form>
-		<table id="tabel1" class="table table-bordered table-hover">
-		<thead>
-		<tr>
-			<th>#</th>
-			<th>Waktu</th>
-			<th>Kadar pH</th>
-			<th>Keterangan</th>
-		</tr>
-		</thead>
-		<tbody>
-		 {{-- @if (isset($data)) --}} @foreach ($data as $d )
-		<tr>
-			<td>{{$loop->iteration}}</td>
-			<td>{{$d->created_at}}</td>
-			<td>{{$d->kadar_ph}}</td>
-			<td>{{$d->status_ph}}</td>
-		</tr>
-		 @endforeach {{-- @endif --}}
-		</tbody>
-		</table>
-		<button type="submit" class="btn btn-primary btn-sm">
-		<i class="fa fa-dot-circle-o"></i> Export Excel </button>
-		<button type="reset" class="btn btn-danger btn-sm">
-		<i class=""></i> Cetak PDF </button>
-	</div>
-</div>
-</div>
-</div>
-<!-- /.card-bod-->
-</div>
+		    </form>
+            <table id="tabel1" class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        {{-- <th>#</th> --}}
+                        <th>Waktu</th>
+                        <th>Kadar pH</th>
+                        <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {{-- @if (isset($data)) --}} @foreach ($data as $d )
+                <tr>
+                    {{-- <td>{{$loop->iteration}}</td> --}}
+                    <td>{{$d->created_at}}</td>
+                    <td>{{$d->kadar_ph}}</td>
+                    <td>{{$d->status_ph}}</td>
+                </tr>
+                @endforeach {{-- @endif --}}
+                </tbody>
+            </table>
+            {{-- <button type="submit" class="btn btn-primary btn-sm">
+            <i class="fa fa-dot-circle-o"></i> Export Excel </button>
+            <button type="reset" class="btn btn-danger btn-sm">
+            <i class=""></i> Cetak PDF </button> --}}
+	    </div>
+    </div>
 </div>
 </div>
 <!-- jQuery -->
@@ -99,6 +77,15 @@
 <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 <script src="https://cdn.datatables.net/datetime/1.1.0/js/dataTables.dateTime.min.js"></script>
+
+<script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.flash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
+
 <script src="{{asset('template')}}/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 <script src="{{asset('template')}}/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
 <script src="{{asset('template')}}/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
@@ -106,10 +93,10 @@
 <script src="{{asset('template')}}/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
 <script src="{{asset('template')}}/plugins/jszip/jszip.min.js"></script>
 <script src="{{asset('template')}}/plugins/pdfmake/pdfmake.min.js"></script>
-<script src="{{asset('template')}}/plugins/pdfmake/vfs_fonts.js"></script>
+{{-- <script src="{{asset('template')}}/plugins/pdfmake/vfs_fonts.js"></script>
 <script src="{{asset('template')}}/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="{{asset('template')}}/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="{{asset('template')}}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<script src="{{asset('template')}}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script> --}}
  {{--
 <script>
       $('#tabel1').DataTable({
@@ -132,10 +119,16 @@
           table.fnDraw();}})
   </script>
  --}}
+
+
+
 <script>
   var minDate, maxDate;
     // DataTables initialisation
-    var table = $('#tabel1').DataTable();
+    var table = $('#tabel1').DataTable({
+        dom: 'Bfrtip',
+        buttons: ['excel', 'pdf', 'print']
+    });
     // Create date inputs
     minDate = new DateTime($('#min'), {
         format: 'YYYY-MM-DD'
@@ -150,7 +143,7 @@ $.fn.dataTable.ext.search.push(
     function( settings, data, dataIndex ) {
         var min = minDate.val();
         var max = maxDate.val();
-        var date = new Date(data[1]);
+        var date = new Date(data[0]);
         if (
             ( min === null && max === null ) ||
             ( min == null && date <= max ) ||

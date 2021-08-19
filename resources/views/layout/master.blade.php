@@ -16,13 +16,12 @@
   <!-- Theme style -->
   {{-- <link rel="stylesheet" href="{{asset('template')}}/dist/css/style.css"> --}}
   <!-- DataTables -->
+  <link rel="stylesheet" href="{{asset('template')}}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   {{-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css"> --}}
   <link rel="stylesheet" href="https://cdn.datatables.net/datetime/1.1.0/css/dataTables.dateTime.min.css">
-  <link rel="stylesheet" href="{{asset('template')}}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="{{asset('template')}}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="{{asset('template')}}/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  {{-- <link rel="stylesheet" href="{{asset('template')}}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css"> --}}
+  {{-- s<link rel="stylesheet" href="{{asset('template')}}/plugins/datatables-buttons/css/buttons.bootstrap4.min.css"> --}}
   <link rel="stylesheet" href="{{asset('air-datepicker')}}/dist/css/datepicker.css">
-  {{-- <link href="{{asset('template')}}/css/plugins/dataTables/datatables.min.css" rel="stylesheet"> --}}
 
 
   @stack('custom-css')
@@ -113,6 +112,9 @@
 <script src="{{asset('template')}}/dist/js/adminlte.min.js"></script>
 <script src="{{asset('template')}}/dist/js/plugins/dataTables/datatables.min.js"></script>
 <script src="{{asset('template')}}/dist/js/plugins/dataTables/dataTables.bootstrap4.min.js"></script>
+{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> --}}
+{{-- <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>  --}}
+
 
 <script type="text/javascript">
     // 1 detik = 1000
