@@ -27,13 +27,15 @@
           <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
 
           <div class="info-box-content">
-            <span class="info-box-text">Keasaman Air</span>
-            <span class="info-box-number">
-              6.56
-            </span>
-            <span class="info-box-number">
-                Asam
-            </span>
+              @foreach ($data_terakhir_ph as $dp)
+              <span class="info-box-text">Keasaman Air</span>
+              <span class="info-box-number">
+                {{$dp->kadar_ph}}
+              </span>
+              <span class="info-box-number">
+                  {{$dp->status_ph}}
+              </span>
+              @endforeach
           </div>
           <!-- /.info-box-content -->
         </div>
@@ -44,13 +46,15 @@
           <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
 
           <div class="info-box-content">
-            <span class="info-box-text">Kekeruhan Air</span>
-            <span class="info-box-number">
-              9.78
-            </span>
-            <span class="info-box-number">
-                Keruh
-            </span>
+              @foreach ($data_terakhir_keruh as $dk)
+              <span class="info-box-text">Kekeruhan Air</span>
+              <span class="info-box-number">
+                {{$dk->NTU}}
+              </span>
+              <span class="info-box-number">
+                  {{$dk->status_kekeruhan}}
+              </span>
+              @endforeach
           </div>
           <!-- /.info-box-content -->
         </div>

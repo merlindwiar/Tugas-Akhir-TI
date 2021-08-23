@@ -39,7 +39,7 @@
                     <td>{{$loop->iteration}}</td>
                     <td>{{$item->created_at->format('H:i:s')}}</td>
                     <td>{{$item->NTU}}</td>
-                    <td>{{$item->status_kekeruhan->jenis_kekeruhan}}</td>
+                    <td>{{$item->status_kekeruhan}}</td>
                   </tr>
                 @endforeach
             </tbody>
