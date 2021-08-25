@@ -20,9 +20,9 @@ use App\Http\Controllers\LoginController; // step 1
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::middleware(['auth','ceklevel:admin'])->group(function () {
     Route::get('/data-daerah','AlatController@index')->name('data-daerah');
@@ -34,7 +34,7 @@ Route::middleware(['auth','ceklevel:admin'])->group(function () {
 });
 
 Route::middleware(['auth','ceklevel:admin,user'])->group(function () {
-    Route::get('/beranda', 'DashboardController@dataTerakhir');
+    Route::get('/', 'DashboardController@dataTerakhir');
     Route::get('/keasaman-air','PhController@index')->name('keasaman-air');
     Route::get('/rekap-asam','RekapAsamController@index')->name('rekap-asam');
     Route::post('/filter-asam','RekapAsamController@index')->name('filter-asam');

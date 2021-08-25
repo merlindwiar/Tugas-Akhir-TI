@@ -8,7 +8,7 @@
 			<!-- /.card-header -->
 			<form action="search_created_at" method="POST">
 				<div class="card-body">
-					<div class="pilihan">
+					{{-- <div class="pilihan">
 						<div class="row form-group">
 							<div class="">
 								<label for="text-input" class=" form-control-label">Id alat</label>
@@ -22,7 +22,7 @@
 								</div>
 							</select>
 						</div>
-					</div>
+					</div> --}}
                     <div class="form-inline">
                         <div class="row form-group mx-2">
                             <label for="Tanggal Awal">Awal</label>

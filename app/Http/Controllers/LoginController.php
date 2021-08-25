@@ -10,13 +10,13 @@ class LoginController extends Controller
     public function postlogin(Request $request){
         // dd($request->all());
         if(Auth::attempt($request->only('email','password'))){
-            return redirect('beranda');
+            return redirect('/');
         }
         return redirect('login');
     }
     public function logout(Request $request){
         // dd($request->all());
         Auth::logout();
-        return redirect('/');
+        return redirect('/login');
     }
 }

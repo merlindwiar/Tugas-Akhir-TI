@@ -11,7 +11,7 @@
 				 --}}
 				<form action="search_created_at" method="POST">
 					<div class="card-body">
-						<div class="pilihan">
+						{{-- <div class="pilihan">
 							<div class="row form-group">
 								<div class="">
 									<label for="text-input" class=" form-control-label">Id alat</label>
@@ -25,7 +25,7 @@
 									</div>
 								</select>
 							</div>
-						</div>
+						</div> --}}
 						 {{--
 						<form action="{{url('filter-asam')}}" method="post" enctype="multipart/form-data" class="form-horizontal">
 							 --}} {{-- {{ csrf_field() }} --}}
@@ -54,7 +54,7 @@
 						</form>
 						 --}}
 					</div>
-				</div>
+
 			</form>
 			<table id="tabel1" class="table table-bordered table-hover">
 			<thead>
