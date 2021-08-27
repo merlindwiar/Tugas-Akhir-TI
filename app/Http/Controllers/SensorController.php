@@ -5,11 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Ph;
 use App\Models\Kekeruhan;
+use App\Models\RataDataKeruh;
 
 class SensorController extends Controller
 {
     public function PhMasuk(Request $request)
     {
+
+
 
         $status = $request->input('kadar_ph');
         if ($status<7.00) {
@@ -44,6 +47,11 @@ class SensorController extends Controller
 
     public function NTUMasuk(Request $request)
     {
+        $kekeruhan= Kekeruhan::avg('NTU');
+        // dd($kekeruhan);
+        $rata = new RataDataKeruh;
+        $rata->NTU= $kekeruhan;
+        $rata->save();
 
         $statusNtU = $request->input('NTU');
         if ($statusNtU<7.00) {
@@ -71,5 +79,7 @@ class SensorController extends Controller
                 'message' => 'Post Gagal Disimpan!',
             ], 401);
         }
+
+
     }
 }
