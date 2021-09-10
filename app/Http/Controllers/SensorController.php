@@ -54,11 +54,14 @@ class SensorController extends Controller
         $rata->save();
 
         $statusNtU = $request->input('NTU');
-        if ($statusNtU<7.00) {
+        if ($statusNtU<25.00) {
             $hasilNTU='Jernih';
         }
+        elseif ($statusNtU>400.00) {
+            $hasil='Keruh';
+        }
         else{
-            $hasilNTU='Keruh';
+            $hasilNTU='Normal';
         }
         //proses create data baru
         $ntu = Kekeruhan::create([

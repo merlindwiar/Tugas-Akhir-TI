@@ -20,9 +20,16 @@ use App\Http\Controllers\LoginController; // step 1
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+    });
+
+    // Route::post('/login', function () {
+    //     return view('Pengguna.Login');
+    // })->name('login');
+    Route::get('/login', [LoginController::class, 'login'])->name('login');
+    Route::post('/postlogin', 'LoginController@postlogin')->name('postlogin');
+    Route::get('/logout', 'LoginController@logout')->name('logout');
 
 Route::middleware(['auth','ceklevel:admin'])->group(function () {
     Route::get('/data-daerah','AlatController@index')->name('data-daerah');
@@ -34,7 +41,7 @@ Route::middleware(['auth','ceklevel:admin'])->group(function () {
 });
 
 Route::middleware(['auth','ceklevel:admin,user'])->group(function () {
-    Route::get('/', 'DashboardController@dataTerakhir');
+    Route::get('/dashboard', 'DashboardController@dataTerakhir');
     Route::get('/keasaman-air','PhController@index')->name('keasaman-air');
     Route::get('/rekap-asam','RekapAsamController@index')->name('rekap-asam');
     Route::post('/filter-asam','RekapAsamController@index')->name('filter-asam');
@@ -98,9 +105,3 @@ Route::get('/users/{id_user}', function ($id_user) {
 
 // Route::get('/tes_status_keruh', 'StatusKeruhController@index');
 
-Route::get('/login', function () {
-    return view('Pengguna.Login');
-})->name('login');
-
-Route::post('/postlogin', 'LoginController@postlogin')->name('postlogin');
-Route::get('/logout', 'LoginController@logout')->name('logout');

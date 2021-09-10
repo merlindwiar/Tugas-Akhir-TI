@@ -69,7 +69,7 @@
  --}}
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <!-- Bootstrap 4 -->
-<script src="{{asset('template')}}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{asset('public/template/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- DataTables  & Plugins -->
  {{--
 <script src="{{asset('template')}}/plugins/datatables/jquery.dataTables.min.js"></script>
@@ -86,13 +86,13 @@
 <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
 
-<script src="{{asset('template')}}/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="{{asset('template')}}/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="{{asset('template')}}/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<script src="{{asset('template')}}/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-<script src="{{asset('template')}}/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="{{asset('template')}}/plugins/jszip/jszip.min.js"></script>
-<script src="{{asset('template')}}/plugins/pdfmake/pdfmake.min.js"></script>
+<script src="{{asset('public/template/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{asset('public/template/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{asset('public/template/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+<script src="{{asset('public/template/plugins/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
+<script src="{{asset('public/template/plugins/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
+<script src="{{asset('public/template/plugins/jszip/jszip.min.js')}}"></script>
+<script src="{{asset('public/template/plugins/pdfmake/pdfmake.min.js')}}"></script>
 {{-- <script src="{{asset('template')}}/plugins/pdfmake/vfs_fonts.js"></script>
 <script src="{{asset('template')}}/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="{{asset('template')}}/plugins/datatables-buttons/js/buttons.print.min.js"></script>

@@ -7,10 +7,13 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
+    public function login(){
+        return view('Pengguna.Login');
+    }
     public function postlogin(Request $request){
         // dd($request->all());
         if(Auth::attempt($request->only('email','password'))){
-            return redirect('/');
+            return redirect('/dashboard');
         }
         return redirect('login');
     }

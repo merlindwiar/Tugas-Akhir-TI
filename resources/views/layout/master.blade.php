@@ -8,20 +8,20 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="{{asset('template')}}/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="{{asset('public/template/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- IonIcons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{asset('template')}}/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="{{asset('public/template/dist/css/adminlte.min.css')}}">
   <!-- Theme style -->
   {{-- <link rel="stylesheet" href="{{asset('template')}}/dist/css/style.css"> --}}
   <!-- DataTables -->
-  <link rel="stylesheet" href="{{asset('template')}}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="{{asset('public/template/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
   {{-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css"> --}}
   <link rel="stylesheet" href="https://cdn.datatables.net/datetime/1.1.0/css/dataTables.dateTime.min.css">
   {{-- <link rel="stylesheet" href="{{asset('template')}}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css"> --}}
   {{-- s<link rel="stylesheet" href="{{asset('template')}}/plugins/datatables-buttons/css/buttons.bootstrap4.min.css"> --}}
-  <link rel="stylesheet" href="{{asset('air-datepicker')}}/dist/css/datepicker.css">
+  <link rel="stylesheet" href="{{asset('public/air-datepicker/dist/css/datepicker.css')}}">
 
 
   @stack('custom-css')
@@ -85,33 +85,33 @@
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
 <!-- Bootstrap -->
-<script src="{{asset('template')}}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{asset('public/template/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE -->
-<script src="{{asset('template')}}/dist/js/adminlte.js"></script>
+<script src="{{asset('public/template/dist/js/adminlte.js')}}"></script>
 
 <!-- OPTIONAL SCRIPTS -->
 {{-- <script src="{{asset('template')}}/plugins/chart.js/Chart.min.js"></script> --}}
 <!-- AdminLTE for demo purposes -->
-<script src="{{asset('template')}}/dist/js/demo.js"></script>
+<script src="{{asset('public/template/dist/js/demo.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{asset('template')}}/dist/js/pages/dashboard3.js"></script>
+<script src="{{asset('public/template/dist/js/pages/dashboard3.js')}}"></script>
 <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 <!-- FLOT CHARTS -->
-<script src="{{asset('template')}}/plugins/flot/jquery.flot.js"></script>
+<script src="{{asset('public/template/plugins/flot/jquery.flot.js')}}"></script>
 <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
-<script src="{{asset('template')}}/plugins/flot/plugins/jquery.flot.resize.js"></script>
+<script src="{{asset('public/template/plugins/flot/plugins/jquery.flot.resize.js')}}"></script>
 <!-- FLOT PIE PLUGIN - also used to draw donut charts -->
-<script src="{{asset('template')}}/plugins/flot/plugins/jquery.flot.pie.js"></script>
+<script src="{{asset('public/template/plugins/flot/plugins/jquery.flot.pie.js')}}"></script>
 <!-- FLOT CHARTS -->
-<script src="{{asset('template')}}/plugins/flot/jquery.flot.js"></script>
+<script src="{{asset('public/template/plugins/flot/jquery.flot.js')}}"></script>
 <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
-<script src="{{asset('template')}}/plugins/flot/plugins/jquery.flot.resize.js"></script>
+<script src="{{asset('public/template/plugins/flot/plugins/jquery.flot.resize.js')}}"></script>
 <!-- FLOT PIE PLUGIN - also used to draw donut charts -->
-<script src="{{asset('template')}}/plugins/flot/plugins/jquery.flot.pie.js"></script>
+<script src="{{asset('public/template/plugins/flot/plugins/jquery.flot.pie.js')}}"></script>
 <!-- AdminLTE App -->
-<script src="{{asset('template')}}/dist/js/adminlte.min.js"></script>
-<script src="{{asset('template')}}/dist/js/plugins/dataTables/datatables.min.js"></script>
-<script src="{{asset('template')}}/dist/js/plugins/dataTables/dataTables.bootstrap4.min.js"></script>
+<script src="{{asset('public/template/dist/js/adminlte.min.js')}}"></script>
+<script src="{{asset('public/template/dist/js/plugins/dataTables/datatables.min.js')}}"></script>
+<script src="{{asset('public/template/dist/js/plugins/dataTables/dataTables.bootstrap4.min.js')}}"></script>
 {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> --}}
 {{-- <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>  --}}
 
