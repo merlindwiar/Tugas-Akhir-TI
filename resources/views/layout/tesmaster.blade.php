@@ -1493,14 +1493,14 @@
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="{{asset('public/template/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
 <!-- Summernote -->
-<script src="{{asset('public/template/plugins/summernote/summernote-bs4.min.js')}}"></script>
+<script src="{{asset('public/template/plugins/summernote/summernote-bs4.min.js"></script>
 <!-- overlayScrollbars -->
-<script src="{{asset('public/template/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
+<script src="{{asset('public/template/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
-<script src="{{asset('public/template/dist/js/adminlte.js')}}"></script>
+<script src="{{asset('public/template/dist/js/adminlte.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{asset('public/template/dist/js/demo.js')}}"></script>
+<script src="{{asset('public/template/dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{asset('public/template/dist/js/pages/dashboard.js')}}"></script>
+<script src="{{asset('public/template/dist/js/pages/dashboard.js"></script>
 </body>
 </html>

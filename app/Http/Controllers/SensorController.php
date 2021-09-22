@@ -12,8 +12,6 @@ class SensorController extends Controller
     public function PhMasuk(Request $request)
     {
 
-
-
         $status = $request->input('kadar_ph');
         if ($status<7.00) {
             $hasil='Asam';
@@ -47,11 +45,11 @@ class SensorController extends Controller
 
     public function NTUMasuk(Request $request)
     {
-        $kekeruhan= Kekeruhan::avg('NTU');
+        // $kekeruhan= Kekeruhan::avg('NTU');
         // dd($kekeruhan);
-        $rata = new RataDataKeruh;
-        $rata->NTU= $kekeruhan;
-        $rata->save();
+        // $rata = new RataDataKeruh;
+        // $rata->NTU= $kekeruhan;
+        // $rata->save();
 
         $statusNtU = $request->input('NTU');
         if ($statusNtU<25.00) {
