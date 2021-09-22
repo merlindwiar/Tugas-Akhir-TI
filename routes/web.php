@@ -41,7 +41,7 @@ Route::middleware(['auth','ceklevel:admin'])->group(function () {
 });
 
 Route::middleware(['auth','ceklevel:admin,user'])->group(function () {
-    Route::get('/dashboard', 'DashboardController@dataTerakhir');
+    Route::get('/dashboard', 'DashboardController@dataTerakhir')->name('dashboard');
     Route::get('/keasaman-air','PhController@index')->name('keasaman-air');
     Route::get('/rekap-asam','RekapAsamController@index')->name('rekap-asam');
     Route::post('/filter-asam','RekapAsamController@index')->name('filter-asam');
@@ -105,3 +105,7 @@ Route::get('/users/{id_user}', function ($id_user) {
 
 // Route::get('/tes_status_keruh', 'StatusKeruhController@index');
 
+
+Route::get('/tes', function () {
+    return view('layout.ujimaster');
+    });

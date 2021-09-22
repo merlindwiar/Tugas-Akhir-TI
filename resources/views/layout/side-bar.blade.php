@@ -2,7 +2,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
-      <img src="{{asset('template')}}/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="{{asset('public/template/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Pantau Air</span>
     </a>
 
@@ -18,34 +18,23 @@
         </div>
       </div>
 
-
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item">
-            <a href="/" class="nav-link">
-              <ion-icon name="apps-sharp"></ion-icon>
+          <li class="nav-item menu-open">
+            <a href="{{url('dashboard')}}" class="nav-link active">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
               </p>
             </a>
-           </li>
-           {{-- <li class="nav-item">
-             <a href="{{url('/pantau/tinggi-air')}}" class="nav-link">
-                <a href="/tinggi-air" class="nav-link">
-                <ion-icon name="water-sharp"></ion-icon>
-              <p>
-                Pantau Tinggi Air
-              </p>
-            </a>
-          </li>  --}}
+          </li>
           @if (auth()->user()->level=="user")
           <li class="nav-item">
             <a href="{{url('keasaman-air')}}" class="nav-link">
-                <ion-icon name="list-sharp"></ion-icon>
+              <i class="nav-icon fas fa-th"></i>
               <p>
                 Pantau Keasaman Air
               </p>
@@ -53,7 +42,7 @@
           </li>
           <li class="nav-item">
             <a href="{{url('kekeruhan-air')}}" class="nav-link">
-                <ion-icon name="list-sharp"></ion-icon>
+              <i class="nav-icon fas fa-th"></i>
               <p>
                 Pantau Kekeruhan Air
               </p>
@@ -63,22 +52,13 @@
           @if (auth()->user()->level=="admin")
           <li class="nav-item">
             <a href="{{route('data-daerah')}}" class="nav-link">
-                <ion-icon name="list-sharp"></ion-icon>
+              <i class="list-sharp"></i>
               <p>
                 Data Lokasi
               </p>
             </a>
           </li>
           @endif
-          {{-- <li class="nav-item">
-            <a href="/pantau-daerah" class="nav-link">
-                <ion-icon name="location-sharp"></ion-icon>
-              <p>
-                Titik Pantau
-              </p>
-            </a>
-          </li> --}}
-
           <li class="nav-item">
             <a href="{{route('logout')}}" class="nav-link">
                 <i class="fas fa-sign-out-alt"></i>
@@ -87,18 +67,9 @@
               </p>
             </a>
           </li>
-          {{-- <li class="nav-item">
-            <a href="/edit-profil" class="nav-link">
-                <ion-icon name="person-sharp"></ion-icon>
-              <p>
-                Edit Profil
-              </p>
-            </a>
-          </li> --}}
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
   </aside>
-
