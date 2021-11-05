@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Kekeruhan;
+use App\Models\Data;
 use Illuminate\Http\Request;
 
 class RekapKeruhController extends Controller
@@ -10,7 +10,7 @@ class RekapKeruhController extends Controller
     public function index()
     {
         //
-        $data=Kekeruhan::all();
+        $data=Data::all();
         // dd($data);
         return view('content.rekapkeruh', compact('data'));
 

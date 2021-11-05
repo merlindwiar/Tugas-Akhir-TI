@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Ph;
+use App\Models\Data;
 use DB;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -13,7 +13,7 @@ class PhController extends Controller
     {
         //
         // $pagename='Data Kuliah';
-        $data=Ph::whereDate('created_at', Carbon::today())->get();
+        $data=Data::whereDate('created_at', Carbon::today())->get();
 
         // $groups = DB::table('phs')
         //     ->select('kadar_ph')

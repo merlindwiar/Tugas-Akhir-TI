@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alat;
-use App\Models\Ph;
+use App\Models\Data;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -12,7 +12,7 @@ class RekapAsamController extends Controller
     public function index(Request $request)
     {
         // $pagename='Data Kuliah';
-        $data=Ph::all();
+        $data=Data::all();
         // dd($request->all());
 
         // dd($data);

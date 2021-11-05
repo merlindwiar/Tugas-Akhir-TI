@@ -46,8 +46,7 @@
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
+          <div class="col-sm-9">
           </div><!-- /.col -->
           <div class="col-sm-3">
             <p>Tanggal/Waktu: <span id="tanggalwaktu"></span></p>
@@ -109,5 +108,28 @@
 <script src="{{asset('public/template/dist/js/demo.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('public/template/dist/js/pages/dashboard.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script type="text/javascript">
+    // 1 detik = 1000
+    window.setTimeout("waktu()",1000);
+    function waktu() {
+    var tanggal = new Date();
+    setTimeout("waktu()",1000);
+    document.getElementById("jam").innerHTML = tanggal.getHours()+":"+tanggal.getMinutes()+":"+tanggal.getSeconds();
+    }
+    </script>
+    <script>
+        var tw = new Date();
+        if (tw.getTimezoneOffset() == 0) (a=tw.getTime() + ( 7 *60*60*1000))
+        else (a=tw.getTime());
+        tw.setTime(a);
+        var tahun= tw.getFullYear ();
+        var hari= tw.getDay ();
+        var bulan= tw.getMonth ();
+        var tanggal= tw.getDate ();
+        var hariarray=new Array("Minggu,","Senin,","Selasa,","Rabu,","Kamis,","Jum'at,","Sabtu,");
+        var bulanarray=new Array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","Nopember","Desember");
+        document.getElementById("tanggalwaktu").innerHTML = hariarray[hari]+" "+tanggal+" "+bulanarray[bulan]+" "+tahun;
+        </script>
 </body>
 </html>

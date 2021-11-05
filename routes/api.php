@@ -21,4 +21,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/PhMasuk', [SensorController::class, 'PhMasuk']);
 Route::post('/NTUMasuk', [SensorController::class, 'NTUMasuk']);
+Route::post('/Masuk', [SensorController::class, 'Masuk']);
+
 

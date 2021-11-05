@@ -27,7 +27,7 @@
           <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
 
           <div class="info-box-content">
-              @foreach ($data_terakhir_ph as $dp)
+              @foreach ($data_terakhir as $dp)
               <span class="info-box-text">Keasaman Air</span>
               <span class="info-box-number">
                 {{$dp->kadar_ph}}
@@ -46,7 +46,7 @@
           <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
 
           <div class="info-box-content">
-              @foreach ($data_terakhir_keruh as $dk)
+              @foreach ($data_terakhir as $dk)
               <span class="info-box-text">Kekeruhan Air</span>
               <span class="info-box-number">
                 {{$dk->NTU}}

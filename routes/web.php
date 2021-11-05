@@ -31,6 +31,10 @@ Route::get('/', function () {
     Route::post('/postlogin', 'LoginController@postlogin')->name('postlogin');
     Route::get('/logout', 'LoginController@logout')->name('logout');
 
+    Route::get('/firebase','FirebaseController@index');
+    Route::get('/firebase-store','FirebaseController@store');
+
+
 Route::middleware(['auth','ceklevel:admin'])->group(function () {
     Route::get('/data-daerah','AlatController@index')->name('data-daerah');
     Route::get('/tambah-titik','AlatController@create')->name('tambah-titik');

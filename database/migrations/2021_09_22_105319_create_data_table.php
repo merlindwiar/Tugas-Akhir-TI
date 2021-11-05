@@ -16,8 +16,8 @@ class CreateDataTable extends Migration
         Schema::create('data', function (Blueprint $table) {
             $table->id();
             $table->float('NTU');
-            $table->String('status_kekeruhan');
             $table->float('kadar_ph');
+            $table->String('status_kekeruhan');
             $table->String('status_ph');
             $table->timestamps();
         });

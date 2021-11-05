@@ -48,7 +48,7 @@
                 {{-- @if (isset($data)) --}} @foreach ($data as $d )
                 <tr>
                     {{-- <td>{{$loop->iteration}}</td> --}}
-                    <td>{{$d->created_at}}</td>
+                    <td>{{ $d->created_at }}</td>
                     <td>{{$d->kadar_ph}}</td>
                     <td>{{$d->status_ph}}</td>
                 </tr>
@@ -144,10 +144,11 @@ $.fn.dataTable.ext.search.push(
         var min = minDate.val();
         var max = maxDate.val();
         var date = new Date(data[0]);
+
         if (
             ( min === null && max === null ) ||
             ( min == null && date <= max ) ||
-            ( min <= date   && max == null ) ||
+            ( min <= date  && max == null ) ||
             ( min <= date   && date <= max )
         ) {
             return true;

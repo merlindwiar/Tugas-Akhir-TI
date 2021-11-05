@@ -24,7 +24,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-            <a href="{{url('dashboard')}}" class="nav-link active">
+            <a href="{{url('dashboard')}}" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -52,8 +52,8 @@
           @if (auth()->user()->level=="admin")
           <li class="nav-item">
             <a href="{{route('data-daerah')}}" class="nav-link">
-              <i class="list-sharp"></i>
-              <p>
+                <i class="nav-icon fas fa-th"></i>
+                <p>
                 Data Lokasi
               </p>
             </a>
