@@ -26,8 +26,7 @@ class FirebaseController extends Controller
         ->getReference('blog/posts')
         ->push([
         'title' => 'Laravel FireBase Tutorial' ,
-        'category' => 'Laravel'
-        ]);
+        'category' => 'Laravel']);
         echo '<pre>';
         print_r($newPost->getvalue());
     }
