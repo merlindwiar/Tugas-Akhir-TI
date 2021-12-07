@@ -9,9 +9,17 @@
     </a>
   </div><br>
 
-<div class="card">
+{{-- <div class="card">
     <div class="panel">
         <div id="chartTinggi">
+        </div>
+    </div>
+</div> --}}
+<div class="card">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Grafik Kekeruhan Air</h3>
+            <canvas id="myChart"></canvas>
         </div>
     </div>
 </div>
@@ -37,7 +45,7 @@
                 @foreach ($data as $item )
                 <tr>
                     <td>{{$loop->iteration}}</td>
-                    <td>{{$item->created_at->format('H:i:s')}}</td>
+                    <td>{{$item->created_at}}</td>
                     <td>{{$item->NTU}}</td>
                     <td>{{$item->status_kekeruhan}}</td>
                   </tr>
@@ -67,6 +75,58 @@
 <script src="{{asset('public/template/plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
 <script src="{{asset('public/template/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+<script>
+    var ctx = document.getElementById("myChart");
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: [],
+        datasets: [{
+          fill: false,
+          pointBorderColor: 'blue',
+          borderColor: 'blue',
+          label: 'NTU',
+          data: [],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          xAxes: [],
+          yAxes: [{
+            ticks: {
+              beginAtZero:true
+            }
+          }]
+        }
+      }
+    });
+    var updateChart = function() {
+      $.ajax({
+        url: "{{ route('api.chart') }}",
+        type: 'GET',
+        dataType: 'json',
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        success: function(data) {
+          myChart.data.labels = data.labels;
+          myChart.data.datasets[0].data = data.data;
+          myChart.update();
+        },
+        error: function(data){
+          console.log(data);
+        }
+      });
+    }
+
+    updateChart();
+    setInterval(() => {
+      updateChart();
+    }, 1000);
+  </script>
 <script>
 
   let data = @json($data);

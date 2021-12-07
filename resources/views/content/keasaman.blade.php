@@ -9,7 +9,7 @@
     </a>
   </div><br>
 
-  <div class="card">
+  {{-- <div class="card">
     <div class="panel">
 <figure class="highcharts-figure">
   <div id="container"></div>
@@ -17,9 +17,17 @@
   </p>
 </figure>
     </div>
+</div> --}}
+<div class="card">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Grafik Keasaman Air</h3>
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
 </div>
 
-  <div class="card">
+  {{-- <div class="card">
     <div class="panel">
         <div id="chart">
 
@@ -33,7 +41,7 @@
 
         </div>
     </div>
-</div>
+</div> --}}
 
 <div class="row">
     <div class="col-12">
@@ -56,7 +64,7 @@
                 @foreach ($data as $item )
                 <tr>
                     <td>{{$loop->iteration}}</td>
-                    <td>{{$item->created_at->format('H:i:s')}}</td>
+                    <td>{{$item->created_at}}</td>
                     <td>{{$item->kadar_ph}}</td>
                     <td>{{$item->status_ph}}</td>
                   </tr>
@@ -91,160 +99,58 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script>
-  Highcharts.chart('container', {
-  chart: {
-    type: 'spline',
-    animation: Highcharts.svg, // don't animate in old IE
-    marginRight: 10,
-    events: {
-      load: function () {
-
-        // set up the updating of the chart each second
-        var series = this.series[0];
-        setInterval(function () {
-          var x = (new Date()).getTime(), // current time
-            y = Math.random();
-          series.addPoint([x, y], true, true);
-        }, 1000);
-      }
-    }
-  },
-
-  time: {
-    useUTC: false
-  },
-
-  title: {
-    text: 'Live random data'
-  },
-
-  accessibility: {
-    announceNewData: {
-      enabled: true,
-      minAnnounceInterval: 15000,
-      announcementFormatter: function (allSeries, newSeries, newPoint) {
-        if (newPoint) {
-          return 'New point added. Value: ' + newPoint.y;
-        }
-        return false;
-      }
-    }
-  },
-
-  xAxis: {
-    type: 'datetime',
-    tickPixelInterval: 150
-  },
-
-  yAxis: {
-    title: {
-      text: 'Value'
-    },
-    plotLines: [{
-      value: 0,
-      width: 1,
-      color: '#808080'
-    }]
-  },
-
-  tooltip: {
-    headerFormat: '<b>{series.name}</b><br/>',
-    pointFormat: '{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}'
-  },
-
-  legend: {
-    enabled: false
-  },
-
-  exporting: {
-    enabled: false
-  },
-
-  series: [{
-    name: 'Random data',
-    data: (function () {
-      // generate an array of random data
-      var data = [],
-        time = (new Date()).getTime(),
-        i;
-
-      for (i = -19; i <= 0; i += 1) {
-        data.push({
-          x: time + i * 1000,
-          y: Math.random()
-        });
-      }
-      return data;
-    }())
-  }]
-});
-</script>
-
-<script>
-        var options = {
-          series: [{
-          data: data.slice()
-        }],
-          chart: {
-          id: 'realtime',
-          height: 350,
-          type: 'line',
-          animations: {
-            enabled: true,
-            easing: 'linear',
-            dynamicAnimation: {
-              speed: 1000
+    var ctx = document.getElementById("myChart");
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: [],
+        datasets: [{
+          fill: false,
+          pointBorderColor: 'blue',
+          borderColor: 'blue',
+          label: 'pH',
+          data: [],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          xAxes: [],
+          yAxes: [{
+            ticks: {
+              beginAtZero:true
             }
-          },
-          toolbar: {
-            show: false
-          },
-          zoom: {
-            enabled: false
-          }
+          }]
+        }
+      }
+    });
+    var updateChart = function() {
+      $.ajax({
+        url: "{{ route('api.chartph') }}",
+        type: 'GET',
+        dataType: 'json',
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
-        dataLabels: {
-          enabled: false
+        success: function(data) {
+          myChart.data.labels = data.labels;
+          myChart.data.datasets[0].data = data.data;
+          myChart.update();
         },
-        stroke: {
-          curve: 'smooth'
-        },
-        title: {
-          text: 'Dynamic Updating Chart',
-          align: 'left'
-        },
-        markers: {
-          size: 0
-        },
-        xaxis: {
-          type: 'datetime',
-          range: XAXISRANGE,
-        },
-        yaxis: {
-          max: 100
-        },
-        legend: {
-          show: false
-        },
-        };
+        error: function(data){
+          console.log(data);
+        }
+      });
+    }
 
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
-        chart.render();
+    updateChart();
+    setInterval(() => {
+      updateChart();
+    }, 1000);
+  </script>
 
-
-        window.setInterval(function () {
-        getNewSeries(lastDate, {
-          min: 10,
-          max: 90
-        })
-
-        chart.updateSeries([{
-          data: data
-        }])
-      }, 1000)
-</script>
 <script>
 
   let data = @json($data);

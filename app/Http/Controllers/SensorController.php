@@ -56,10 +56,6 @@ class SensorController extends Controller
                 'message' => 'Post Gagal Disimpan!',
             ], 401);
         }
-
-
-
-
     }
 
     // public function NTUMasuk(Request $request)

@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SensorController;
+use App\Http\Controllers\SensorTampilController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,5 +24,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('/PhMasuk', [SensorController::class, 'PhMasuk']);
 Route::post('/NTUMasuk', [SensorController::class, 'NTUMasuk']);
 Route::post('/Masuk', [SensorController::class, 'Masuk']);
+Route::get('/chart', [SensorTampilController::class, 'tampil'])->name('api.chart');
+Route::get('/chartph', [SensorTampilController::class, 'tampilph'])->name('api.chartph');
+// Route::get('chart', 'SensorTampilController@tampil')->name('api.chart');
 
 
