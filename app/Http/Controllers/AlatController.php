@@ -21,13 +21,15 @@ class AlatController extends Controller
 
     public function store(Request $request){
         // dd($request->all());
+
+
         Alat::create([
             'nama_alat' => $request->nama_alat,
             'latitude' => $request->latitude,
             'longitude' => $request->longitude,
         ]);
 
-        return redirect('data-daerah')->with('toast_success', 'Data Lokasi Berhasil Ditambahkan!');
+        return redirect('data-daerah')->with('success', 'Data Alat Berhasil Ditambahkan!');
     }
 
     public function edit($id){
@@ -38,12 +40,12 @@ class AlatController extends Controller
     public function update(Request $request, $id){
         $titik = Alat::findOrFail($id);
         $titik->update($request->all());
-        return redirect('data-daerah')->with('toast_success', 'Data Lokasi Berhasil Diupdate!');
+        return redirect('data-daerah')->with('success', 'Data Alat Berhasil Diupdate!');
     }
 
     public function destroy($id){
         $titik = Alat::findOrFail($id);
         $titik->delete();
-        return back()->with('info', 'Data Lokasi Berhasil Dihapus!');
+        return back()->with('success', 'Data Alat Berhasil Dihapus!');
     }
 }

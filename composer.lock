@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e55f00db424594d2adac228d461df361",
+    "content-hash": "38e02b045f0372ddd411cda142694cb4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3143,20 +3143,20 @@
         },
         {
             "name": "realrashid/sweet-alert",
-            "version": "v4.0.0",
+            "version": "v4.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/realrashid/sweet-alert.git",
-                "reference": "4923bb91d7144c2ac5dacda0b5e1472fff3d88af"
+                "reference": "7615c5799fbc8743a6b5a7bd7f645f55a1d62723"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/realrashid/sweet-alert/zipball/4923bb91d7144c2ac5dacda0b5e1472fff3d88af",
-                "reference": "4923bb91d7144c2ac5dacda0b5e1472fff3d88af",
+                "url": "https://api.github.com/repos/realrashid/sweet-alert/zipball/7615c5799fbc8743a6b5a7bd7f645f55a1d62723",
+                "reference": "7615c5799fbc8743a6b5a7bd7f645f55a1d62723",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "^7.0|^8.0",
+                "laravel/framework": "^5.6|^6.0|^7.0|^8.0",
                 "php": "^7.2|^8.0"
             },
             "require-dev": {
@@ -3205,6 +3205,12 @@
                 "sweet-alert2",
                 "toast"
             ],
+            "support": {
+                "docs": "https://realrashid.github.io/sweet-alert/",
+                "email": "realrashid05@gmail.com",
+                "issues": "https://github.com/realrashid/sweet-alert/issues",
+                "source": "https://github.com/realrashid/sweet-alert"
+            },
             "funding": [
                 {
                     "url": "https://ko-fi.com/realrashid",
@@ -3223,7 +3229,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-06-14T19:01:35+00:00"
+            "time": "2021-11-06T09:34:33+00:00"
         },
         {
             "name": "riverline/multipart-parser",
