@@ -51,7 +51,7 @@
           <div class="col-sm-9">
           </div><!-- /.col -->
           <div class="col-sm-3">
-            <p>Tanggal/Waktu: <span id="tanggalwaktu"></span></p>
+            {{-- <p>Tanggal/Waktu: <span id="tanggalwaktu"></span></p> --}}
             <p><span id="jam" ></span></p>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -111,7 +111,11 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('public/template/dist/js/pages/dashboard.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-<script type="text/javascript">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+{{-- <script type="text/javascript">
     // 1 detik = 1000
     window.setTimeout("waktu()",1000);
     function waktu() {
@@ -119,8 +123,8 @@
     setTimeout("waktu()",1000);
     document.getElementById("jam").innerHTML = tanggal.getHours()+":"+tanggal.getMinutes()+":"+tanggal.getSeconds();
     }
-    </script>
-    <script>
+    </script> --}}
+    {{-- <script>
         var tw = new Date();
         if (tw.getTimezoneOffset() == 0) (a=tw.getTime() + ( 7 *60*60*1000))
         else (a=tw.getTime());
@@ -132,6 +136,9 @@
         var hariarray=new Array("Minggu,","Senin,","Selasa,","Rabu,","Kamis,","Jum'at,","Sabtu,");
         var bulanarray=new Array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","Nopember","Desember");
         document.getElementById("tanggalwaktu").innerHTML = hariarray[hari]+" "+tanggal+" "+bulanarray[bulan]+" "+tahun;
-        </script>
+        </script> --}}
 </body>
+<script>
+    swal("Selamat Datang", "Anda akan diarahkan ke halaman dashboard", "success");
+</script>
 </html>
