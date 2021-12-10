@@ -24,19 +24,28 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <form action="{{url('simpan-titik')}}" method="post" enctype="multipart/form-data" class="form-horizontal">
                         {{ csrf_field() }}
                         <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nama alat</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="nama_alat" name="nama_alat" placeholder="Nama Alat" class="form-control"><small class="form-text text-muted"></small></div>
+                            <div class="col-12 col-md-9"><input type="text" id="nama_alat" name="nama_alat" placeholder="Nama Alat" class="form-control" value="{{ old('nama_alat') }}"><small class="form-text text-muted"></small></div>
                         </div>
                         <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Latitude</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="latitude" name="latitude" placeholder="Latitude" class="form-control"><small class="form-text text-muted"></small></div>
+                            <div class="col-12 col-md-9"><input type="text" id="latitude" name="latitude" placeholder="Latitude" class="form-control" value="{{ old('latitude') }}"><small class="form-text text-muted"></small></div>
                         </div>
                         <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Longitude</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="longitude" name="longitude" placeholder="Longitude" class="form-control"><small class="form-text text-muted"></small></div>
+                            <div class="col-12 col-md-9"><input type="text" id="longitude" name="longitude" placeholder="Longitude" class="form-control" value="{{ old('longitude') }}"><small class="form-text text-muted"></small></div>
                         </div>
                                     <button type="submit" class="btn btn-primary btn-sm">
                                         <i class="fa fa-dot-circle-o"></i> Simpan Data

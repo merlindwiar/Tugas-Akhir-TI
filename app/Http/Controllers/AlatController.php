@@ -22,6 +22,15 @@ class AlatController extends Controller
     public function store(Request $request){
         // dd($request->all());
 
+        $messages = [
+            'required' => ':attribute wajib diisi',
+        ];
+
+        $validated = $request->validate([
+            'nama_alat' => 'required',
+            'latitude' => 'required',
+            'longitude' => 'required',
+        ],$messages);
 
         Alat::create([
             'nama_alat' => $request->nama_alat,
